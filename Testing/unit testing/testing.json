@@ -1,0 +1,10 @@
+{
+  "Shopping":["http://www.amazon.com"],
+  "Business":["http://www.seekingalpha.com/"],
+  "Science":["http://www.howstuffworks.com"],
+  "Computers":["https://www.codecademy.com/learn"],
+  "Sports":["http://espn.com"],
+  "Health":["http://www.mountsinai.org/"],
+  "News":["http://bbc.com"]
+
+}
