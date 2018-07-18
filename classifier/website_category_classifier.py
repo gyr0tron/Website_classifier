@@ -95,8 +95,8 @@ def success(name):
     # Define model and setup tensorboard
     model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 
-    # model.fit(train_x, train_y, n_epoch=1000, batch_size=8, show_metric=True)
-    # model.save('model.tflearn')
+    model.fit(train_x, train_y, n_epoch=1000, batch_size=8, show_metric=True)
+    model.save('model.tflearn')
     model.load('model.tflearn')
 
 
@@ -125,12 +125,14 @@ def success(name):
 
     # provide the data in the dictionary format to be rendered in the template
     d={}
-    domains = ["Shopping", "Business", "Science", "Computers", "Sports", "Health", "News"]
+    domains = ["Adult", "Shopping", "Business", "Science", "Computers", "Sports", "Health", "News"]
     i=0
     for keys in domains:
 
         d[keys]=flat_list[i]
         i=i+1
+        
+    print(d)
     return  render_template('results.html', result = d)
 
 

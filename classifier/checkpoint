@@ -1,2 +1,2 @@
-model_checkpoint_path: "D:\\flask_implementation\\model_for_flask\\model.tflearn"
-all_model_checkpoint_paths: "D:\\flask_implementation\\model_for_flask\\model.tflearn"
+model_checkpoint_path: "/Users/gyrotron/Documents/Projects/Python/Website_classifier/classifier/model.tflearn"
+all_model_checkpoint_paths: "/Users/gyrotron/Documents/Projects/Python/Website_classifier/classifier/model.tflearn"

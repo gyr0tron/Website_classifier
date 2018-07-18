@@ -54,7 +54,7 @@ def reading_the_html_page(url_list):
 
 fileObject = open('training.json', 'w+')
 dict = {}
-category = ["Business","Computers","Health","News","Science","Shopping","Sports"]
+category = ["Adult"]
 
 for match in category:
     lookup = []
