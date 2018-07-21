@@ -1,2 +1,2 @@
-model_checkpoint_path: "/Users/gyrotron/Documents/Projects/Python/Website_classifier/classifier/model.tflearn"
-all_model_checkpoint_paths: "/Users/gyrotron/Documents/Projects/Python/Website_classifier/classifier/model.tflearn"
+model_checkpoint_path: "D:\\Codez\\Python\\Website_classifier\\classifier\\model.tflearn"
+all_model_checkpoint_paths: "D:\\Codez\\Python\\Website_classifier\\classifier\\model.tflearn"

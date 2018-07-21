@@ -95,8 +95,8 @@ def success(name):
     # Define model and setup tensorboard
     model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 
-    model.fit(train_x, train_y, n_epoch=1000, batch_size=8, show_metric=True)
-    model.save('model.tflearn')
+    # model.fit(train_x, train_y, n_epoch=1000, batch_size=8, show_metric=True)
+    # model.save('model.tflearn')
     model.load('model.tflearn')
 
 
@@ -141,27 +141,30 @@ def success(name):
 def login():
     try:
         if request.method == 'POST':
-           url = request.form['nm']
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) '
-                          'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
-            'Connection': 'keep-alive'}
-        request_result = requests.get(url, timeout=30, stream=True, headers=headers)
-
-        if request_result.status_code == 200 and request_result.text is not None:
-            soup = BeautifulSoup(request_result.text, "html.parser")
-            tag = soup.find('meta', attrs={'name': re.compile('keywords', re.I)})
-            keywords = tag.get('content') if tag is not None and tag.get('content') is not None \
-                                             and tag.get('content').strip() else None
-            if keywords is None:
-                tag = soup.find('meta', attrs={'name': re.compile('description', re.I)})
-                description = tag.get('content') if tag is not None and tag.get('content') is not None \
-                                                    and tag.get('content').strip() else None
-                lookup=(description) if description is not None else None
+            url = request.form['nm']
+            if (url == NULL):
+               print("null url")
             else:
-                lookup=(keywords) if keywords is not None else None
-        else:
-            print ('Page Not Open:\t' + url)
+                headers = {
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) '
+                                'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
+                    'Connection': 'keep-alive'}
+                request_result = requests.get(url, timeout=30, stream=True, headers=headers)
+
+                if request_result.status_code == 200 and request_result.text is not None:
+                    soup = BeautifulSoup(request_result.text, "html.parser")
+                    tag = soup.find('meta', attrs={'name': re.compile('keywords', re.I)})
+                    keywords = tag.get('content') if tag is not None and tag.get('content') is not None \
+                                                    and tag.get('content').strip() else None
+                    if keywords is None:
+                        tag = soup.find('meta', attrs={'name': re.compile('description', re.I)})
+                        description = tag.get('content') if tag is not None and tag.get('content') is not None \
+                                                            and tag.get('content').strip() else None
+                        lookup=(description) if description is not None else None
+                    else:
+                        lookup=(keywords) if keywords is not None else None
+                else:
+                    print ('Page Not Open:\t' + url)
     except Exception as e:
         print("URL:" + url + str(e))
     print('-----------------')
