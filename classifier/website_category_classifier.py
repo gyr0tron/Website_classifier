@@ -142,7 +142,7 @@ def login():
     try:
         if request.method == 'POST':
             url = request.form['nm']
-            if (url == NULL):
+            if (url == "data:text/html;charset=UTF-8,GoodContent"):
                print("null url")
             else:
                 headers = {
