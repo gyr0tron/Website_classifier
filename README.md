@@ -5,3 +5,6 @@
 4. Classifer.py
 5. API call by runnning the UI_page.html
 6. Test the Classifer using the Testing Folder
+
+# Web Browser
+https://github.com/gyr0tron/Web_Browser
